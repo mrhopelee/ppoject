@@ -19,13 +19,12 @@ $(document).ready(	function() {
 			temp0, temp1,
 			remp0,remp1,
 			img_num = 1,
-			img_str = " ",
-			hiddenshadow= $(".hiddenshadow");
+			img_str = " ";
 		function rdivfun(thisnum) {
 			a = img_num;
 			b = thisnum+1;
 			if(a==b){}else{
-				hiddenshadowfun(hiddenshadow);
+				hiddenshadowfun();
 				temp0 = photoshow.eq(img_num - 1);
 				temp1 = photoshow.eq(thisnum);
 				remp0 = rdiv.eq(img_num - 1);
@@ -56,7 +55,7 @@ $(document).ready(	function() {
 			}
 		}
 		function prevfun() {/* img_num给图片编号，控制图片变化。 */
-			hiddenshadowfun(hiddenshadow);
+			hiddenshadowfun();
 			if (img_num == 1) {
 				img_num = 5;
 				a = 1;
@@ -100,7 +99,7 @@ $(document).ready(	function() {
 			img_str = "url(image/主页/bg" + img_num + ".jpg)";
 		}
 		function nextfun() {
-			hiddenshadowfun(hiddenshadow);
+			hiddenshadowfun();
 			if (img_num == 5) {
 				img_num = 1;
 				a = 1;
@@ -183,7 +182,8 @@ $(document).ready(	function() {
 	/*setInterval("autonex()",5000)
 	 function autonex(){foo.nextfun();}*/
 });
-function hiddenshadowfun(hiddenshadow){
+function hiddenshadowfun(){
+	var hiddenshadow= $(".hiddenshadow");
 	hiddenshadow.css({
 		"display":"block"
 	});
