@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>媒体查询X滚动监听</title>
+    <!-- External CSS all-->
+    <link rel="stylesheet" href="http://libs.useso.com/js/bootstrap/3.2.0/css/bootstrap.css">
+    <style>
+        body{
+            height:1600px;
+            position: relative;
+        }
+        .left{
+            position: fixed;
+            width: 15%;
+            margin-left: 5%;
+        }
+        .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+            border-right: 2px solid;
+            border-radius: 0px;
+            color: #F00;
+            background-color: #FFF;
+        }
+        .left .nav .nav{
+            display: none;
+        }
+        .left .nav>.active>ul{
+            display: block;
+        }
+        .left ul ul{
+            padding-left: 20px;
+        }
+        .rightcenter{
+            /*overflow: hidden;
+            zoom: 1;*/
+            /*position: absolute;*/
+            overflow: hidden;
+            margin-left: 26%;
+        }
+        .big{
+            height: auto;
+        }
+    </style>
+    <!-- JavaScript -->
+    <script src="http://libs.useso.com/js/jquery/2.1.1/jquery.js"></script>
+    <script src="http://libs.useso.com/js/bootstrap/3.2.0/js/bootstrap.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('body').scrollspy({ target: '#navbar-example' })
+        })
+    </script>
+
+</head>
+<body  data-spy="scroll" data-target="#navbar-example">
+
+<div class="left" id="navbar-example">
+    <ul class="leftnav nav nav-pills nav-stacked" >
+        <li>
+            <a href="#the1">001</a>
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="#the1-1">001-1</a></li>
+                <li><a href="#the1-2">001-2</a></li>
+                <li><a href="#the1-3">001-3</a></li>
+                <li><a href="#the1-4">001-4</a></li>
+                <li><a href="#the1-5">001-5</a></li>
+            </ul>
+        </li>
+        <li><a href="#the2">002</a></li>
+        <li><a href="#the3">003</a></li>
+        <li><a href="#the4">004</a></li>
+        <li><a href="#the5">005</a></li>
+    </ul>
+</div>
+<!--<div class="rightcenter">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, beatae blanditiis corporis cum ea eaque, eius illum iste magnam nisi perferendis placeat, quae quas quasi qui ratione reprehenderit repudiandae sunt tempore velit! Ab assumenda dolorem doloremque eligendi eum id laborum laudantium minima, necessitatibus suscipit temporibus voluptas? Accusamus atque aut, dolorum ea eos eum excepturi facere fugiat inventore iusto laborum, non placeat quaerat quasi qui rem temporibus totam ut vel velit. Aperiam cum dolorem eius illum nulla obcaecati perspiciatis velit veritatis. Autem est fuga, impedit omnis perspiciatis repellendus tempora voluptate voluptatum? Consectetur dignissimos ea eum laudantium veritatis. Amet incidunt maiores reprehenderit.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, beatae blanditiis corporis cum ea eaque, eius illum iste magnam nisi perferendis placeat, quae quas quasi qui ratione reprehenderit repudiandae sunt tempore velit! Ab assumenda dolorem doloremque eligendi eum id laborum laudantium minima, necessitatibus suscipit temporibus voluptas? Accusamus atque aut, dolorum ea eos eum excepturi facere fugiat inventore iusto laborum, non placeat quaerat quasi qui rem temporibus totam ut vel velit. Aperiam cum dolorem eius illum nulla obcaecati perspiciatis velit veritatis. Autem est fuga, impedit omnis perspiciatis repellendus tempora voluptate voluptatum? Consectetur dignissimos ea eum laudantium veritatis. Amet incidunt maiores reprehenderit.
+</div>-->
+<div class="rightcenter">
+    <div class="big">
+        <p><h1 id="the1">001</h1></p>
+        <hr/>
+        <div class="big"><p><h3 id="the1-1">001-1</h3></p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita maxime minima repudiandae. Assumenda commodi dolor eos, hic incidunt ipsum mollitia quaerat reiciendis voluptatibus. A, consectetur, recusandae. Aliquam asperiores, at beatae eligendi omnis qui voluptas. Alias aliquid amet aperiam architecto blanditiis corporis culpa cupiditate debitis distinctio doloremque doloribus ducimus enim error est eveniet, ex fuga harum illum in incidunt laboriosam molestiae mollitia nam nobis non nulla optio porro ratione reiciendis rem reprehenderit rerum sed sunt ut velit vitae voluptatum? Culpa ducimus explicabo itaque molestiae nihil perspiciatis quasi quibusdam ut vel vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, nulla.</div>
+        <div class="big"><p><h3 id="the1-2">001-2</h3></p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur ea ex maxime nemo nisi quas repellendus sit! Accusantium, amet architecto asperiores atque beatae dolor dolores ea eaque error excepturi facilis fugiat harum ipsa ipsum itaque iure maxime modi nam officia officiis perferendis saepe sit tempora unde voluptatum. Ad adipisci aliquid asperiores assumenda at commodi consequatur cumque deleniti, deserunt enim esse et ex expedita id illum ipsum libero maxime nesciunt nisi nulla odit repellat repudiandae sapiente sed tempora ut voluptas voluptatibus? Iusto, nam soluta. Ab id, possimus quas quos rem velit. Ad beatae delectus ea earum error nam quo voluptas voluptates!</div>
+        <div class="big"><p><h3 id="the1-3">001-3</h3></p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consectetur distinctio dolor ea ex exercitationem, expedita harum natus nisi odit quasi rem reprehenderit, sed similique soluta. Aliquid fugit quam quasi similique vitae! Ad doloremque eaque expedita hic iure nobis suscipit? Ab commodi corporis id libero numquam quasi voluptate? Aliquam, asperiores consectetur corporis delectus dicta eius eligendi eveniet facere id itaque, laborum libero modi nam natus numquam odit officia optio quam qui quis repellat rerum saepe sapiente sit soluta tempore tenetur ullam, vero vitae voluptatibus. Id illo impedit omnis. Iure, nisi. Consectetur deleniti dolores ducimus ipsa nulla odio quia soluta ullam?</div>
+        <div class="big"><p><h3 id="the1-4">001-4</h3></p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At distinctio excepturi incidunt minus pariatur quia quod sequi ut? Animi architecto aut autem commodi, consectetur dolorum eum id iste iure maxime mollitia nihil nostrum obcaecati perferendis quod rem soluta, veritatis vero! Adipisci consectetur, debitis in mollitia porro quaerat quis quisquam rem repellat sint soluta tempora ullam? Ab aliquam animi consequuntur dolor eveniet in ipsam iure laboriosam magnam molestias rerum, sit tempore unde vero voluptatum. Cupiditate dolore eius eligendi fugiat mollitia, nulla quaerat ratione unde? Ab autem fugiat magnam molestiae odio voluptatibus! Dolorum eligendi ex expedita impedit possimus quis reiciendis reprehenderit voluptatibus?</div>
+        <div class="big"><p><h3 id="the1-5">001-5</h3></p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at aut beatae culpa cum delectus deserunt excepturi exercitationem fugiat impedit inventore ipsam laborum minima nam natus, nobis non officia quae quibusdam sapiente sequi vero voluptas voluptates. Animi architecto assumenda corporis culpa cupiditate delectus deleniti distinctio ea esse facere fugit harum ipsa laboriosam laudantium magnam nisi obcaecati perferendis provident quam qui quibusdam quidem suscipit tenetur vel, veniam. Alias cum deserunt dolorum eos praesentium quo repudiandae similique vero! Dolorem error fuga illum in, nostrum odit officiis pariatur quia quis ratione tenetur voluptatem. Accusamus consequuntur corporis cum distinctio dolorum fugit odio omnis suscipit.</div>
+    </div>
+    <div class="big"><p><h1 id="the2">002</h1></p><hr/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur ea ex maxime nemo nisi quas repellendus sit! Accusantium, amet architecto asperiores atque beatae dolor dolores ea eaque error excepturi facilis fugiat harum ipsa ipsum itaque iure maxime modi nam officia officiis perferendis saepe sit tempora unde voluptatum. Ad adipisci aliquid asperiores assumenda at commodi consequatur cumque deleniti, deserunt enim esse et ex expedita id illum ipsum libero maxime nesciunt nisi nulla odit repellat repudiandae sapiente sed tempora ut voluptas voluptatibus? Iusto, nam soluta. Ab id, possimus quas quos rem velit. Ad beatae delectus ea earum error nam quo voluptas voluptates!</div>
+    <div class="big"><p><h1 id="the3">003</h1></p><hr/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consectetur distinctio dolor ea ex exercitationem, expedita harum natus nisi odit quasi rem reprehenderit, sed similique soluta. Aliquid fugit quam quasi similique vitae! Ad doloremque eaque expedita hic iure nobis suscipit? Ab commodi corporis id libero numquam quasi voluptate? Aliquam, asperiores consectetur corporis delectus dicta eius eligendi eveniet facere id itaque, laborum libero modi nam natus numquam odit officia optio quam qui quis repellat rerum saepe sapiente sit soluta tempore tenetur ullam, vero vitae voluptatibus. Id illo impedit omnis. Iure, nisi. Consectetur deleniti dolores ducimus ipsa nulla odio quia soluta ullam?</div>
+    <div class="big"><p><h1 id="the4">004</h1></p><hr/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At distinctio excepturi incidunt minus pariatur quia quod sequi ut? Animi architecto aut autem commodi, consectetur dolorum eum id iste iure maxime mollitia nihil nostrum obcaecati perferendis quod rem soluta, veritatis vero! Adipisci consectetur, debitis in mollitia porro quaerat quis quisquam rem repellat sint soluta tempora ullam? Ab aliquam animi consequuntur dolor eveniet in ipsam iure laboriosam magnam molestias rerum, sit tempore unde vero voluptatum. Cupiditate dolore eius eligendi fugiat mollitia, nulla quaerat ratione unde? Ab autem fugiat magnam molestiae odio voluptatibus! Dolorum eligendi ex expedita impedit possimus quis reiciendis reprehenderit voluptatibus?</div>
+    <div class="big"><p><h1 id="the5">005</h1></p><hr/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at aut beatae culpa cum delectus deserunt excepturi exercitationem fugiat impedit inventore ipsam laborum minima nam natus, nobis non officia quae quibusdam sapiente sequi vero voluptas voluptates. Animi architecto assumenda corporis culpa cupiditate delectus deleniti distinctio ea esse facere fugit harum ipsa laboriosam laudantium magnam nisi obcaecati perferendis provident quam qui quibusdam quidem suscipit tenetur vel, veniam. Alias cum deserunt dolorum eos praesentium quo repudiandae similique vero! Dolorem error fuga illum in, nostrum odit officiis pariatur quia quis ratione tenetur voluptatem. Accusamus consequuntur corporis cum distinctio dolorum fugit odio omnis suscipit.</div>
+</div>
+</body>
+</html>
