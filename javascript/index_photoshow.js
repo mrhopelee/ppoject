@@ -178,7 +178,15 @@ $(document).ready(	function() {
 		foo.nextfun();
 		startAutoNext();
 	});
-	startAutoNext();
+
+	$(".lazy").each(function() {
+		$(this).load(function(){
+			$(this).removeClass("lazy")
+			$(".gg").fadeOut();
+			startAutoNext();
+		});
+
+	});
 	/*setInterval("autonex()",5000)
 	 function autonex(){foo.nextfun();}*/
 });
