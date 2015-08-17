@@ -35,6 +35,14 @@
 	width: 100%;
 	height: 100%;
 }
+.lazy{
+	display: none;
+}
+.gg{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
 
 .bandr {
 	position: relative;
