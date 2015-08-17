@@ -179,14 +179,20 @@ $(document).ready(	function() {
 		startAutoNext();
 	});
 
-	$(".lazy").each(function() {
+	/*$(".lazy").each(function() {
 		$(this).load(function(){
-			$(this).removeClass("lazy")
-			$(".gg").fadeOut();
-			startAutoNext();
+			$(this).removeClass("lazy");
+			 $(".gg").fadeOut();
+			 startAutoNext();
 		});
+	});*/
+	setTimeout(function(){
+		$(".lazy").removeClass("lazy");
+		$(".gg").fadeOut();
+		$(".Absolute-Center").fadeOut();
+		startAutoNext();
+	},2000);
 
-	});
 	/*setInterval("autonex()",5000)
 	 function autonex(){foo.nextfun();}*/
 });
