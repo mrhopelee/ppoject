@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>瀑布流二</title>
+    <!-- External CSS all-->
+    <link rel="stylesheet" href="http://libs.useso.com/js/bootstrap/3.2.0/css/bootstrap.css">
+    <!-- In-document CSS -->
+    <style>
+        .HomePage {
+            width: 1250px;
+            margin: 0 auto;
+        }
+
+        .Module {
+            /*width: 250px;
+            margin: 30px auto;*/
+            /*text-align: center;*/
+            position: relative;
+            /*overflow: hidden;*/
+            background-color: #DDDDDD;
+        }
+
+        .item {
+            margin: 14px 7px 0 7px;
+            width: 236px;
+        }
+
+        /*.i1 {
+            position: absolute;
+            left:200px;
+            top: 200px;
+        }*/
+
+        .item > a > img {
+            width: 236px;
+        }
+
+    </style>
+    <!-- External JavaScript all -->
+    <script src="http://libs.useso.com/js/jquery/2.1.1/jquery.js"></script>
+    <script src="http://libs.useso.com/js/bootstrap/3.2.0/js/bootstrap.js"></script>
+    <!--<script src="javascript/masonry.pkgd.js"></script>-->
+    <!-- In-document JavaScript -->
+
+</head>
+<body>
+<div class="HomePage">
+    <div class="Module">
+        <div class="item i1"><a href=""><img src="pblimg/P_001.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_002.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_003.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_004.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_005.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_006.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_007.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_008.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_009.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_010.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_011.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_012.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_013.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_014.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_015.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_016.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_017.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_018.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_019.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_020.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_021.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_022.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_023.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_024.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_025.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_026.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_027.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_028.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_029.jpg" alt=""/></a></div>
+        <div class="item"><a href=""><img src="pblimg/P_030.jpg" alt=""/></a></div>
+    </div>
+</div>
+<script>
+    var moudle = $(".Module"),
+            b = 250,
+            c = 5;
+    function initch() {
+        var arr = new Array(c)
+        for (var i = 0; i < c; i++) {
+            arr[i] = 0;
+        }
+        return arr;
+    }
+    function minch(p) {
+        return p.indexOf(Math.min.apply(null, p));
+        /*获取高度最小的列*/
+    }
+
+    var item = $(".item");
+    console.log("共" + item.length + "个item");
+    function rmove() {
+        var ch = initch();
+        var minsite, now_top, now_left;
+        for (var i = 0; i < item.length; i++) {
+            var now = item.eq(i);
+            minsite = minch(ch);
+            now_left = minsite * b;
+            now_top = ch[minsite];
+            now.css({
+                "position": "absolute",
+                "left": now_left + "px",
+                "top": now_top + "px"
+            });
+            ch[minsite] = ch[minsite] + now.height() + 14;
+        }
+        return 0;
+    }
+    rmove();
+</script>
+</body>
+</html>
