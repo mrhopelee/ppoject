@@ -42,7 +42,7 @@
             /*text-align: center;*/
             position: relative;
             /*overflow: hidden;*/
-            background-color: #DDDDDD;
+            /*background-color: #DDDDDD;*/
         }
 
         .item {
@@ -106,27 +106,86 @@
 <script>
     var moudle = $(".Module"),
             b = 250,
-            c = 5;
+            mw,
+            c;
+    var temp = 31;  /*第一张未加载的图片*/
+    var max =160;   /*图片总数*/
+
     function initch() {
-        var arr = new Array(c)
+        mw = moudle.width();
+        c = mw/b;
+        var arr = new Array(c);
         for (var i = 0; i < c; i++) {
             arr[i] = 0;
         }
         return arr;
     }
-    function minch(p) {
+    function mins(p) {
         return p.indexOf(Math.min.apply(null, p));
         /*获取高度最小的列*/
     }
+    function minh(p) {
+        return Math.min.apply(null, p);
+        /*获取高度最小的列*/
+    }
+    $(window).resize(function() {
+        mw = moudle.width();
+        c = mw/b;
+        console.log("mw :" + mw + "c :" +c);
+        rmove();
+    });
 
-    var item = $(".item");
-    console.log("共" + item.length + "个item");
+    var timer = null;
+    $(document).scroll(function() {
+        if(temp <= max) {
+            if (timer) {
+                clearTimeout(timer);
+                timer = null;
+            }
+            timer = setTimeout(function () {
+                whenscroll();
+            }, 300);
+        }
+    });
+
+    function whenscroll() {
+        if(temp <= max) {
+            var getHeight = $(document).scrollTop() + (window.innerHeight || document.documentElement.clientHeight);
+            if (moudle.offset().top + moudle.height() < getHeight) {
+                append({l: moudle});
+
+            }
+        }
+    }
+
+    function append(parameters) {
+        var str = null;
+        if(temp <= max) {
+            if(temp < 100) {
+                str = "<div class=\"item\"><a href=\"\"><img src=\"pblimg/P_0"+temp+".jpg\" alt=\"\"/></a></div>"
+                temp++;
+            }else {
+                str = "<div class=\"item\"><a href=\"\"><img src=\"pblimg/P_"+temp+".jpg\" alt=\"\"/></a></div>"
+                temp++;
+            }
+            var l = parameters.l;
+            l.append(str);
+            rmove();
+            return this;
+        }else {
+            return this;
+        }
+    }
+
+
     function rmove() {
+        var item = $(".item");
+        /*console.log("共" + item.length + "个item");*/
         var ch = initch();
         var minsite, now_top, now_left;
         for (var i = 0; i < item.length; i++) {
             var now = item.eq(i);
-            minsite = minch(ch);
+            minsite = mins(ch);
             now_left = minsite * b;
             now_top = ch[minsite];
             now.css({
@@ -135,7 +194,17 @@
                 "top": now_top + "px"
             });
             ch[minsite] = ch[minsite] + now.height() + 14;
+
         }
+        moudle.height(minh(ch));
+        /*console.log("offset top :" + moudle.offset().top + "height :" + moudle.height());*/
+        if (timer) {
+            clearTimeout(timer);
+            timer = null;
+        }
+        timer = setTimeout(function () {
+            whenscroll();
+        }, 100);
         return 0;
     }
     rmove();
