@@ -103,8 +103,8 @@
         for(var i = 0; i < m.length; i++) {
             var l = m.eq(i).children(".item").last();
             var span0 = m.eq(i).children("span");
-            var gdtHeight = $(document).scrollTop()+(window.innerHeight || document.documentElement.clientHeight)-100;
-            if(l.offset().top + l.height() < gdtHeight){
+            var getHeight = $(document).scrollTop()+(window.innerHeight || document.documentElement.clientHeight)-100;
+            if(l.offset().top + l.height() < getHeight){
                 append({l: l, span0: span0});
             }
             /*span0.html($(document).scrollTop()+(window.innerHeight || document.documentElement.clientHeight));*/
