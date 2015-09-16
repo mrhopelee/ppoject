@@ -234,8 +234,8 @@
 
                         if (node.tagName.toLowerCase() === 'img') {
                             img = new Image();
-                            img.src = node.src,
-                                    value = img[prop];
+                            img.src = node.src;
+                            value = img[prop];
                         }
                         return value;
                     };
@@ -268,11 +268,11 @@ var waterFall = {
     getAllItem: function () {/*获取容器内所有元素*/
         return this.wFmoudle.children("div");
     },
-    getLastItem: function () {/*获取容器内最新添加的元素*/
-        /*console.log(this.wFmoudle.children("div").length);
-         console.log(this.wFmoudle.children("div").last().height());*/
+    /*getLastItem: function () {/!*获取容器内最新添加的元素*!/
+        /!*console.log(this.wFmoudle.children("div").length);
+         console.log(this.wFmoudle.children("div").last().height());*!/
         return this.wFmoudle.children("div").last();
-    },
+    },*/
     appdneListen: function () {
         var self = this;
         var getHeight = $(document).scrollTop() + (window.innerHeight || document.documentElement.clientHeight);
