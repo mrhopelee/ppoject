@@ -63,10 +63,10 @@
             /*display: none;*/
             /*cursor: pointer;*/
             /*background:rgba(0, 0, 0, 0.75);*/
-            background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.75));
+            background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(0, 0, 0, 1));
         }
 
-        .Zdiv > .Titlediv {
+        .Titlediv {
             z-index: 101;
             height: 1.5em;
             width: 100%;
@@ -84,7 +84,7 @@
             cursor: pointer;
         }
 
-        .Zdiv > .Godiv {
+        .Godiv {
             z-index: 101;
             height: 1.5em;
             width: 100%;
@@ -102,11 +102,11 @@
             cursor: pointer;
         }
 
-        .Zdiv > .Titlediv:hover {
+        .Titlediv:hover {
             background-color: #fff;
         }
 
-        .Zdiv > .Godiv:hover {
+        .Godiv:hover {
             background-color: #000;
         }
 
@@ -212,6 +212,10 @@
     }();
     /*遮罩层*/
     function Zdivclick() {
+        setTimeout(function () {
+            waterFall.init();
+            /*初始化页面中的图片*/
+        }, 500);
         setTimeout(function () {
             $(".Zdiv>div").fadeOut("slow");
             setTimeout(function () {
@@ -425,11 +429,9 @@
     $(document).ready(function () {
         scrollHanlder.disableScroll();
         /*禁用滚动*/
-        setTimeout(function () {
-            waterFall.init();
-            /*初始化页面中的图片*/
-        }, 500);
+
     });
+
 </script>
 </body>
 </html>
