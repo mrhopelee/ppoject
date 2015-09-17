@@ -41,27 +41,73 @@
         }
 
         .Module {
-            /*width: 250px;
-            margin: 30px auto;*/
-            /*text-align: center;*/
             position: relative;
-            /*overflow: hidden;*/
-            /*background-color: #DDDDDD;*/
         }
 
-        .item {
+        .Module > div {
             margin: 14px 7px 0 7px;
             width: 236px;
         }
 
-        /*.i1 {
-            position: absolute;
-            left:200px;
-            top: 200px;
-        }*/
-
         .item > a > img {
             width: 100%;
+        }
+
+        .Zdiv {
+            z-index: 100;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            /*display: none;*/
+            /*cursor: pointer;*/
+            /*background:rgba(0, 0, 0, 0.75);*/
+            background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.75));
+        }
+
+        .Zdiv > .Titlediv {
+            z-index: 101;
+            height: 1.5em;
+            width: 100%;
+            /*display: none;*/
+            background-color: #000;
+            font-size: 1.5em;
+            text-align: center;
+            line-height: 1.5em;
+            margin: auto;
+            position: fixed;
+            left: 0;
+            top: -1.5em;
+            right: 0;
+            bottom: 0;
+            cursor: pointer;
+        }
+
+        .Zdiv > .Godiv {
+            z-index: 101;
+            height: 1.5em;
+            width: 100%;
+            /*display: none;*/
+            background-color: #fff;
+            font-size: 1.5em;
+            text-align: center;
+            line-height: 1.5em;
+            margin: auto;
+            position: fixed;
+            left: 0;
+            top: 1.5em;
+            right: 0;
+            bottom: 0;
+            cursor: pointer;
+        }
+
+        .Zdiv > .Titlediv:hover {
+            background-color: #fff;
+        }
+
+        .Zdiv > .Godiv:hover {
+            background-color: #000;
         }
 
     </style>
@@ -73,323 +119,317 @@
 
 </head>
 <body>
+<div class="Zdiv">
+    <div class="Titlediv">瀑布流</div>
+    <div class="Godiv go2">I'm the dust in the wind.</div>
+</div>
 <div class="HomePage">
     <div class="Module">
-        <div class="item i1"><a href=""><img src="pblimg/P_001.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_002.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_003.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_004.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_005.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_006.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_007.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_008.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_009.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_010.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_011.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_012.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_013.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_014.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_015.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_016.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_017.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_018.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_019.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_020.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_021.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_022.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_023.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_024.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_025.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_026.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_027.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_028.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_029.jpg" alt=""/></a></div>
-        <div class="item"><a href=""><img src="pblimg/P_030.jpg" alt=""/></a></div>
+        <div><a href=""><img src="pblimg/P_000.jpg" alt=""/></a></div>
+        <div><a href=""><img src="pblimg/P_001.jpg" alt=""/></a></div>
+        <div><a href=""><img src="pblimg/P_002.jpg" alt=""/></a></div>
+        <div><a href=""><img src="pblimg/P_003.jpg" alt=""/></a></div>
+        <div><a href=""><img src="pblimg/P_004.jpg" alt=""/></a></div>
+        <div><a href=""><img src="pblimg/P_005.jpg" alt=""/></a></div>
+        <div><a href=""><img src="pblimg/P_006.jpg" alt=""/></a></div>
+        <div><a href=""><img src="pblimg/P_007.jpg" alt=""/></a></div>
+        <div><a href=""><img src="pblimg/P_008.jpg" alt=""/></a></div>
+        <div><a href=""><img src="pblimg/P_009.jpg" alt=""/></a></div>
+        <div><a href=""><img src="pblimg/P_010.jpg" alt=""/></a></div>
+        <div><a href=""><img src="pblimg/P_011.jpg" alt=""/></a></div>
+        <div><a href=""><img src="pblimg/P_012.jpg" alt=""/></a></div>
+        <div><a href=""><img src="pblimg/P_013.jpg" alt=""/></a></div>
+        <div><a href=""><img src="pblimg/P_014.jpg" alt=""/></a></div>
+        <div><a href=""><img src="pblimg/P_015.jpg" alt=""/></a></div>
+        <div><a href=""><img src="pblimg/P_016.jpg" alt=""/></a></div>
+        <div><a href=""><img src="pblimg/P_017.jpg" alt=""/></a></div>
+        <div><a href=""><img src="pblimg/P_018.jpg" alt=""/></a></div>
+        <div><a href=""><img src="pblimg/P_019.jpg" alt=""/></a></div>
     </div>
 </div>
 <script>
-/*
-    var moudle = $(".Module"), /!*容器*!/
-    b = 250, /!*容器内单个单位宽度*!/
-    mw, /!*容器宽度*!/
-    c;
-    /!*每行单位数*!/
-    var temp = 31;
-    /!*第一张未加载的图片*!/
-    var max = 160;
-    /!*图片总数*!/
 
-    function initch() {
-        mw = moudle.width();
-        c = mw / b;
-        var arr = new Array(c);
-        for (var i = 0; i < c; i++) {
-            arr[i] = 0;
+    /*滚动函数,来源于知乎网友*/
+    !function () {
+        var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+        function preventDefault(e) {
+            e = e || window.event;
+            if (e.preventDefault)
+                e.preventDefault();
+            e.returnValue = false;
         }
-        return arr;
-    }
-    function mins(p) {
-        return p.indexOf(Math.min.apply(null, p));
-        /!*获取高度最小的列*!/
-    }
-    function minh(p) {
-        return Math.min.apply(null, p);
-        /!*获取高度最小的列的高度*!/
-    }
-    $(window).resize(function () {
-        mw = moudle.width();
-        c = mw / b;
-        console.log("mw :" + mw + "c :" + c);
-        rmove();
-    });
 
-    var timer = null;
-    $(document).scroll(function () {
-        if (temp <= max) {
-            if (timer) {
-                clearTimeout(timer);
-                timer = null;
-            }
-            timer = setTimeout(function () {
-                whenscroll();
-            }, 300);
-        }
-    });
-
-    function whenscroll() {
-        if (temp <= max) {
-            var getHeight = $(document).scrollTop() + (window.innerHeight || document.documentElement.clientHeight);
-            if (moudle.offset().top + moudle.height() < getHeight) {
-                append({l: moudle});
+        function preventDefaultForScrollKeys(e) {
+            if (keys[e.keyCode]) {
+                preventDefault(e);
+                return false;
             }
         }
+
+        var oldonwheel, oldonmousewheel1, oldonmousewheel2, oldontouchmove, oldonkeydown
+                , isDisabled;
+
+        function disableScroll() {
+            if (window.addEventListener) // older FF
+                window.addEventListener('DOMMouseScroll', preventDefault, false);
+            oldonwheel = window.onwheel;
+            window.onwheel = preventDefault; // modern standard
+
+            oldonmousewheel1 = window.onmousewheel;
+            window.onmousewheel = preventDefault; // older browsers, IE
+            oldonmousewheel2 = document.onmousewheel;
+            document.onmousewheel = preventDefault; // older browsers, IE
+
+            oldontouchmove = window.ontouchmove;
+            window.ontouchmove = preventDefault; // mobile
+
+            oldonkeydown = document.onkeydown;
+            document.onkeydown = preventDefaultForScrollKeys;
+            isDisabled = true;
+        }
+
+        function enableScroll() {
+            if (!isDisabled) return;
+            if (window.removeEventListener)
+                window.removeEventListener('DOMMouseScroll', preventDefault, false);
+
+            window.onwheel = oldonwheel; // modern standard
+
+            window.onmousewheel = oldonmousewheel1; // older browsers, IE
+            document.onmousewheel = oldonmousewheel2; // older browsers, IE
+
+            window.ontouchmove = oldontouchmove; // mobile
+
+            document.onkeydown = oldonkeydown;
+            isDisabled = false;
+        }
+
+        window.scrollHanlder = {
+            disableScroll: disableScroll,
+            enableScroll: enableScroll
+        };
+    }();
+    /*遮罩层*/
+    function Zdivclick() {
+        setTimeout(function () {
+            $(".Zdiv>div").fadeOut("slow");
+            setTimeout(function () {
+                $(".Zdiv").fadeOut("slow");
+                scrollHanlder.enableScroll();
+                /*恢复滚动*/
+            }, 500);
+        }, 500);
     }
+    $(".Zdiv>div").click(Zdivclick);
 
-    function append(parameters) {
-        var str = null;
-        if (temp <= max) {
-            if (temp < 100) {
-                str = "<div class=\"item\"><a href=\"\"><img src=\"pblimg/P_0" + temp + ".jpg\" alt=\"\"/></a></div>"
-                temp++;
-            } else {
-                str = "<div class=\"item\"><a href=\"\"><img src=\"pblimg/P_" + temp + ".jpg\" alt=\"\"/></a></div>"
-                temp++;
-            }
-            var l = parameters.l;
-            l.append(str);
-            rmove();
-            return this;
-        } else {
-            return this;
-        }
-    }
+    /* jquery扩展，naturalHeight()，获取图片原始高度*/
+    /*(function ($) {
+     var
+     props = ['Width', 'Height'],
+     prop;
 
+     while (prop = props.pop()) {
+     (function (natural, prop) {
+     $.fn[natural] = (natural in new Image()) ?
+     function () {
+     return this[0][natural];
+     } :
+     function () {
+     var
+     node = this[0],
+     img,
+     value;
 
-    function rmove() {
-        var item = moudle.children("div");
-        /!*console.log("共" + item.length + "个item");*!/
-        var ch = initch();
-        var minsite, now_top, now_left;
-        for (var i = 0; i < item.length; i++) {
-            var now = item.eq(i);
-            minsite = mins(ch);
-            now_left = minsite * b;
-            now_top = ch[minsite];
-            now.css({
-                "position": "absolute",
-                "left": now_left + "px",
-                "top": now_top + "px"
-            });
-            ch[minsite] = ch[minsite] + now.height() + 14;
+     if (node.tagName.toLowerCase() === 'img') {
+     img = new Image();
+     img.src = node.src;
+     value = img[prop];
+     }
+     return value;
+     };
+     }('natural' + prop, prop.toLowerCase()));
+     }
+     }(jQuery));*/
+    /* 生成json数组pic*/
+    /*var getpic = {
+     con: function () {
+     var pic = {
+     "pnames": ["P_000", "P_001", "P_002", "P_003", "P_004", "P_005", "P_006", "P_007", "P_008", "P_009", "P_010", "P_011", "P_012", "P_013", "P_014", "P_015", "P_016", "P_017", "P_018", "P_019", "P_020", "P_021", "P_022", "P_023", "P_024", "P_025", "P_026", "P_027", "P_028", "P_029", "P_030", "P_031", "P_032", "P_033", "P_034", "P_035", "P_036", "P_037", "P_038", "P_039", "P_040", "P_041", "P_042", "P_043", "P_044", "P_045", "P_046", "P_047", "P_048", "P_049", "P_050", "P_051", "P_052", "P_053", "P_054", "P_055", "P_056", "P_057", "P_058", "P_059", "P_060", "P_061", "P_062", "P_063", "P_064", "P_065", "P_066", "P_067", "P_068", "P_069", "P_070", "P_071", "P_072", "P_073", "P_074", "P_075", "P_076", "P_077", "P_078", "P_079", "P_080", "P_081", "P_082", "P_083", "P_084", "P_085", "P_086", "P_087", "P_088", "P_089", "P_090", "P_091", "P_092", "P_093", "P_094", "P_095", "P_096", "P_097", "P_098", "P_099", "P_100", "P_101", "P_102", "P_103", "P_104", "P_105", "P_106", "P_107", "P_108", "P_109", "P_110", "P_111", "P_112", "P_113", "P_114", "P_115", "P_116", "P_117", "P_118", "P_119", "P_120", "P_121", "P_122", "P_123", "P_124", "P_125", "P_126", "P_127", "P_128", "P_129", "P_130", "P_131", "P_132", "P_133", "P_134", "P_135", "P_136", "P_137", "P_138", "P_139", "P_140", "P_141", "P_142", "P_143", "P_144", "P_145", "P_146", "P_147", "P_148", "P_149", "P_150", "P_151", "P_152", "P_153", "P_154", "P_155", "P_156", "P_157", "P_158", "P_159", "P_160"],
+     "pheights": [354, 354, 354, 159, 349, 311, 301, 422, 293, 195, 355, 156, 347, 177, 331, 347, 175, 343, 355, 322, 354, 226, 708, 178, 159, 356, 156, 177, 236, 354, 332, 177, 336, 300, 207, 299, 236, 170, 177, 315, 157, 236, 236, 236, 279, 148, 334, 328, 328, 354, 338, 157, 349, 189, 293, 329, 356, 334, 342, 155, 354, 236, 390, 314, 148, 328, 340, 340, 354, 354, 354, 159, 349, 311, 301, 422, 293, 195, 355, 156, 347, 177, 331, 347, 175, 343, 355, 322, 354, 226, 708, 178, 159, 356, 156, 177, 236, 354, 332, 177, 336, 300, 207, 299, 236, 170, 177, 315, 157, 236, 236, 236, 279, 148, 334, 328, 328, 354, 338, 157, 349, 189, 293, 329, 356, 334, 342, 155, 354, 236, 390, 314, 148, 328, 340, 340, 354, 156, 347, 177, 331, 347, 175, 343, 355, 322, 354, 226, 708, 178, 159, 356, 156, 177, 236, 354, 332, 177, 336, 300, 207],
+     };
+     /!*pic.pname = [];
+     pic.pheight = [];*!/
 
-        }
-        moudle.height(minh(ch));
-        /!*console.log("offset top :" + moudle.offset().top + "height :" + moudle.height());*!/
-        if (timer) {
-            clearTimeout(timer);
-            timer = null;
-        }
-        timer = setTimeout(function () {
-            whenscroll();
-        }, 100);
-        return 0;
-    }
-*/
-(function ($) {
-    var
-            props = ['Width', 'Height'],
-            prop;
+     var all = $("img");
+     for (var i = 0; i < all.length; i++) {
+     if (i < 10) {
+     pic.pnames[i] = "P_00" + i;
+     } else if (i >= 10 && i < 100) {
+     pic.pnames[i] = "P_0" + i;
+     } else {
+     pic.pnames[i] = "P_" + i;
+     }
 
-    while (prop = props.pop()) {
-        (function (natural, prop) {
-            $.fn[natural] = (natural in new Image()) ?
-                    function () {
-                        return this[0][natural];
-                    } :
-                    function () {
-                        var
-                                node = this[0],
-                                img,
-                                value;
+     pic.pheights[i] = all.eq(i).naturalHeight();
+     }
+     var pnames = pic.pnames;
+     var str = "";
+     for (var j in pnames) {
+     str = str + "\"" + pnames[j] + "\"" + ", "
+     }
+     console.log(str);
+     var pheights = pic.pheights;
+     var str = "";
+     for (var k in pheights) {
+     str = str + pheights[k] + ", "
+     }
+     console.log(str);
+     return this;
+     }
+     };*/
 
-                        if (node.tagName.toLowerCase() === 'img') {
-                            img = new Image();
-                            img.src = node.src;
-                            value = img[prop];
-                        }
-                        return value;
-                    };
-        }('natural' + prop, prop.toLowerCase()));
-    }
-}(jQuery));
-var waterFall = {
-    wFmoudle: $(".Module"), /*容器*/
-    itemWidth: 250, /*容器内单个元素单位宽度*/
-    max: 160, /*图片总数*/
-    arr: null,
-    stop: null,
-    getColumnHeight: function () {/*每列高度数组*/
-        var c = this.wFmoudle.width() / this.itemWidth;
-        /*（列数=容器宽度/单位宽度）*/
-        if (this.arr == null) {
-            this.arr = new Array(c);
-            for (var i = 0; i < c; i++) {
-                this.arr[i] = 0;
-            }
-        }
-        return this.arr;
-    },
-    getMinSite: function (p) {/*获取高度最小的列*/
-        return p.indexOf(Math.min.apply(null, p));
-    },
-    getMinHeight: function (p) {/*获取高度最小的列的高度*/
-        return Math.min.apply(null, p);
-    },
-    getAllItem: function () {/*获取容器内所有元素*/
-        return this.wFmoudle.children("div");
-    },
-    /*getLastItem: function () {/!*获取容器内最新添加的元素*!/
-        /!*console.log(this.wFmoudle.children("div").length);
-         console.log(this.wFmoudle.children("div").last().height());*!/
-        return this.wFmoudle.children("div").last();
-    },*/
-    appdneListen: function () {
-        var self = this;
-        var getHeight = $(document).scrollTop() + (window.innerHeight || document.documentElement.clientHeight);
-        if (self.wFmoudle.offset().top + self.wFmoudle.height() < getHeight) {
-            self.appendItem({m: self.wFmoudle});
-        }
-        return this;
-    },
-    appendItem: function (parameters) {/*添加元素*/
-        var str = null;
-        var self = this;
-        var allItem = this.getAllItem();
-        if (allItem.length + 1 <= this.max) {
-            if (allItem.length + 1 < 100) {
-                str = "<div class=\"item\"><a href=\"\"><img src=\"pblimg/P_0" + (allItem.length + 1) + ".jpg\" alt=\"\"/></a></div>"
-            } else {
-                str = "<div class=\"item\"><a href=\"\"><img src=\"pblimg/P_" + (allItem.length + 1) + ".jpg\" alt=\"\"/></a></div>"
-            }
-            var m = parameters.m;
-            m.append(str);
+    var pic = {
+        /*图片名，图片高*/
+        "pnames": ["P_000", "P_001", "P_002", "P_003", "P_004", "P_005", "P_006", "P_007", "P_008", "P_009", "P_010", "P_011", "P_012", "P_013", "P_014", "P_015", "P_016", "P_017", "P_018", "P_019", "P_020", "P_021", "P_022", "P_023", "P_024", "P_025", "P_026", "P_027", "P_028", "P_029", "P_030", "P_031", "P_032", "P_033", "P_034", "P_035", "P_036", "P_037", "P_038", "P_039", "P_040", "P_041", "P_042", "P_043", "P_044", "P_045", "P_046", "P_047", "P_048", "P_049", "P_050", "P_051", "P_052", "P_053", "P_054", "P_055", "P_056", "P_057", "P_058", "P_059", "P_060", "P_061", "P_062", "P_063", "P_064", "P_065", "P_066", "P_067", "P_068", "P_069", "P_070", "P_071", "P_072", "P_073", "P_074", "P_075", "P_076", "P_077", "P_078", "P_079", "P_080", "P_081", "P_082", "P_083", "P_084", "P_085", "P_086", "P_087", "P_088", "P_089", "P_090", "P_091", "P_092", "P_093", "P_094", "P_095", "P_096", "P_097", "P_098", "P_099", "P_100", "P_101", "P_102", "P_103", "P_104", "P_105", "P_106", "P_107", "P_108", "P_109", "P_110", "P_111", "P_112", "P_113", "P_114", "P_115", "P_116", "P_117", "P_118", "P_119", "P_120", "P_121", "P_122", "P_123", "P_124", "P_125", "P_126", "P_127", "P_128", "P_129", "P_130", "P_131", "P_132", "P_133", "P_134", "P_135", "P_136", "P_137", "P_138", "P_139", "P_140", "P_141", "P_142", "P_143", "P_144", "P_145", "P_146", "P_147", "P_148", "P_149", "P_150", "P_151", "P_152", "P_153", "P_154", "P_155", "P_156", "P_157", "P_158", "P_159", "P_160"],
+        "pheights": [354, 354, 354, 159, 349, 311, 301, 422, 293, 195, 355, 156, 347, 177, 331, 347, 175, 343, 355, 322, 354, 226, 708, 178, 159, 356, 156, 177, 236, 354, 332, 177, 336, 300, 207, 299, 236, 170, 177, 315, 157, 236, 236, 236, 279, 148, 334, 328, 328, 354, 338, 157, 349, 189, 293, 329, 356, 334, 342, 155, 354, 236, 390, 314, 148, 328, 340, 340, 354, 354, 354, 159, 349, 311, 301, 422, 293, 195, 355, 156, 347, 177, 331, 347, 175, 343, 355, 322, 354, 226, 708, 178, 159, 356, 156, 177, 236, 354, 332, 177, 336, 300, 207, 299, 236, 170, 177, 315, 157, 236, 236, 236, 279, 148, 334, 328, 328, 354, 338, 157, 349, 189, 293, 329, 356, 334, 342, 155, 354, 236, 390, 314, 148, 328, 340, 340, 354, 156, 347, 177, 331, 347, 175, 343, 355, 322, 354, 226, 708, 178, 159, 356, 156, 177, 236, 354, 332, 177, 336, 300, 207]
+    };
 
-            m.find("img").last().load(function () {
-                while (m.find("img").last().naturalHeight() == 0) {
+    var waterFall = {
+        wFmoudle: $(".Module"), /*容器*/
+        itemWidth: 250, /*容器内单个元素单位宽度*/
+        max: 160, /*图片总数*/
+        arr: null,
+        getColumnHeight: function () {/*每列高度数组*/
+            var c = this.wFmoudle.width() / this.itemWidth;
+            /*（列数=容器宽度/单位宽度）*/
+            if (this.arr == null) {
+                this.arr = new Array(c);
+                for (var i = 0; i < c; i++) {
+                    this.arr[i] = 0;
                 }
-                /*console.log(m.find("img").last().naturalHeight()+" "+m.children("div").last().height());*/
-                self.wFlast(m);
-            });
-            /*self.stop = setTimeout(function () {
-             self.wFlast(m);
-             }, 100);*/
-        }
-        return this;
-    },
-    wFlast: function (m) {/*容器内最后添加的元素按瀑布流排列*/
-        var lastItem = m.children("div").last();
-        var columnHeight = this.getColumnHeight();
-        var self = this;
-        var minSite = self.getMinSite(columnHeight);
-        lastItem.css({
-            "position": "absolute",
-            "left": minSite * self.itemWidth + "px",
-            "top": columnHeight[minSite] + "px"
-        });
-        columnHeight[minSite] = columnHeight[minSite] + lastItem.height() + 14;
-        /*console.log(columnHeight);*/
-        self.wFmoudle.height(self.getMinHeight(columnHeight));
-        clearTimeout(self.stop);
-        self.stop = null;
-        self.appdneListen();
-        return this;
-    },
-    wFall: function () {/*容器内所有元素按瀑布流排列*/
-        this.arr = null;
-        var allItem = this.getAllItem();
-        var columnHeight = this.getColumnHeight();
-        var self = this;
-        var minSite, nowItemTop, nowItemLeft;
-        for (var i = 0; i < allItem.length; i++) {
-            var nowItem = allItem.eq(i);
-            minSite = self.getMinSite(columnHeight);
-            nowItemLeft = minSite * self.itemWidth;
-            nowItemTop = columnHeight[minSite];
-            nowItem.css({
+            }
+            return this.arr;
+        },
+        getMinSite: function (p) {/*获取高度最小的列*/
+            return p.indexOf(Math.min.apply(null, p));
+        },
+        getMinHeight: function (p) {/*获取高度最小的列的高度*/
+            return Math.min.apply(null, p);
+        },
+        getAllItem: function () {/*获取容器内所有元素*/
+            return this.wFmoudle.children("div");
+        },
+        appdneListen: function () {
+            var self = this;
+            var getHeight = $(document).scrollTop() + (window.innerHeight || document.documentElement.clientHeight);
+            if (self.wFmoudle.offset().top + self.wFmoudle.height() < getHeight) {
+                self.appendItem({m: self.wFmoudle});
+            }
+            return this;
+        },
+        appendItem: function (parameters) {/*添加元素*/
+            var str = null;
+            var self = this;
+            var allItem = this.getAllItem();
+            if (allItem.length > this.max) {
+            } else {
+                str = "<div><a href=\"\"><img src=\"pblimg/" + pic.pnames[allItem.length] + ".jpg\" alt=\"\"/></a></div>";
+                var m = parameters.m;
+                m.append(str);
+                self.wFlast(m, pic.pheights[allItem.length]);
+            }
+            return this;
+        },
+        wFlast: function (m, pheights) {/*容器内最后添加的元素按瀑布流排列*/
+            var lastItem = m.children("div").last();
+            var columnHeight = this.getColumnHeight();
+            var self = this;
+            var minSite = self.getMinSite(columnHeight);
+            lastItem.css({
                 "position": "absolute",
-                "left": nowItemLeft + "px",
-                "top": nowItemTop + "px"
+                "left": minSite * self.itemWidth + "px",
+                "top": columnHeight[minSite] + "px"
             });
-            columnHeight[minSite] = columnHeight[minSite] + nowItem.height() + 14;
-        }
-        self.wFmoudle.height(self.getMinHeight(columnHeight));
-        self.appdneListen();
-        return this;
-    },
-    wFscroll: function () {/*滚动监听，当导航条高度改变*/
-        var self = this;
-        var timer = null;
-        $(document).scroll(function () {
-            if (self.stop) {
-                return this;
-            }
-            if (timer) {
-                clearTimeout(timer);
-            }
-            timer = setTimeout(function () {
+            columnHeight[minSite] = columnHeight[minSite] + pheights + 14;
+            /*console.log(columnHeight);*/
+            self.wFmoudle.height(self.getMinHeight(columnHeight));
+            lastItem.find("img").load(function () {
                 self.appdneListen();
-            }, 300);
-        });
-        return this;
-    },
-    wFresize: function () {/*窗口监听，当容器宽高改变*/
-        var self = this;
-        var timer = null;
-        $(window).resize(function () {
-            if (timer) {
-                clearTimeout(timer);
+            });
+            return this;
+        },
+        wFall: function () {/*容器内所有元素按瀑布流排列*/
+
+            var allItem = this.getAllItem();
+            var columnHeight = this.getColumnHeight();
+            var self = this;
+            var minSite, nowItemTop, nowItemLeft;
+            for (var i = 0; i < allItem.length; i++) {
+                var nowItem = allItem.eq(i);
+                minSite = self.getMinSite(columnHeight);
+                nowItemLeft = minSite * self.itemWidth;
+                nowItemTop = columnHeight[minSite];
+                nowItem.css({
+                    "position": "absolute",
+                    "left": nowItemLeft + "px",
+                    "top": nowItemTop + "px"
+                });
+                columnHeight[minSite] = columnHeight[minSite] + nowItem.height() + 14;
             }
-            timer = setTimeout(function () {
-                self.wFmoudle.height(0);
-                self.wFall();
-            }, 100);
-        });
-        return this;
-    },
-    init: function () {
-        if (this.wFmoudle) {
-            this.wFmoudle.height(0);
-            this.arr = null;
-            this.wFall().wFscroll().wFresize();
+            self.wFmoudle.height(self.getMinHeight(columnHeight));
+            self.appdneListen();
+            return this;
+        },
+        wFscroll: function () {/*滚动监听，当导航条高度改变*/
+            var self = this;
+            var timer = null;
+            $(document).scroll(function () {
+
+                if (self.stop) {
+                    return this;
+                }
+                if (timer) {
+                    clearTimeout(timer);
+                }
+                timer = setTimeout(function () {
+                    self.appdneListen();
+                }, 300);
+            });
+            return this;
+        },
+        wFresize: function () {/*窗口监听，当容器宽高改变*/
+            var self = this;
+            var timer = null;
+            $(window).resize(function () {
+                if (timer) {
+                    clearTimeout(timer);
+                }
+                timer = setTimeout(function () {
+                    self.wFmoudle.height(0);
+                    self.arr = null;
+                    self.wFall();
+                }, 100);
+            });
+            return this;
+        },
+        init: function () {
+            if (this.wFmoudle) {
+                this.wFmoudle.height(0);
+                this.arr = null;
+                this.wFall().wFscroll().wFresize();
+            }
         }
-    }
-};
+    };
 
-setTimeout(function () {
-    waterFall.init();
-}, 100);
-
-
+    $(document).ready(function () {
+        scrollHanlder.disableScroll();
+        /*禁用滚动*/
+        setTimeout(function () {
+            waterFall.init();
+            /*初始化页面中的图片*/
+        }, 500);
+    });
 </script>
 </body>
 </html>
