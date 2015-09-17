@@ -53,6 +53,63 @@
             width: 100%;
         }
 
+        .Zdiv {
+            z-index: 100;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            /*display: none;*/
+            /*cursor: pointer;*/
+            /*background:rgba(0, 0, 0, 0.75);*/
+            background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.75));
+        }
+
+        .Zdiv > .Titlediv {
+            z-index: 101;
+            height: 1.5em;
+            width: 100%;
+            /*display: none;*/
+            background-color: #000;
+            font-size: 1.5em;
+            text-align: center;
+            line-height: 1.5em;
+            margin: auto;
+            position: fixed;
+            left: 0;
+            top: -1.5em;
+            right: 0;
+            bottom: 0;
+            cursor: pointer;
+        }
+
+        .Zdiv > .Godiv {
+            z-index: 101;
+            height: 1.5em;
+            width: 100%;
+            /*display: none;*/
+            background-color: #fff;
+            font-size: 1.5em;
+            text-align: center;
+            line-height: 1.5em;
+            margin: auto;
+            position: fixed;
+            left: 0;
+            top: 1.5em;
+            right: 0;
+            bottom: 0;
+            cursor: pointer;
+        }
+
+        .Zdiv > .Titlediv:hover {
+            background-color: #fff;
+        }
+
+        .Zdiv > .Godiv:hover {
+            background-color: #000;
+        }
+
     </style>
     <!-- External JavaScript all -->
     <script src="http://libs.useso.com/js/jquery/2.1.1/jquery.js"></script>
@@ -62,6 +119,10 @@
 
 </head>
 <body>
+<div class="Zdiv">
+    <div class="Titlediv">瀑布流</div>
+    <div class="Godiv go2">I'm the dust in the wind.</div>
+</div>
 <div class="HomePage">
     <div class="Module">
         <div><a href=""><img src="pblimg/P_000.jpg" alt=""/></a></div>
@@ -87,6 +148,80 @@
     </div>
 </div>
 <script>
+
+    /*滚动函数,来源于知乎网友*/
+    !function () {
+        var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+        function preventDefault(e) {
+            e = e || window.event;
+            if (e.preventDefault)
+                e.preventDefault();
+            e.returnValue = false;
+        }
+
+        function preventDefaultForScrollKeys(e) {
+            if (keys[e.keyCode]) {
+                preventDefault(e);
+                return false;
+            }
+        }
+
+        var oldonwheel, oldonmousewheel1, oldonmousewheel2, oldontouchmove, oldonkeydown
+                , isDisabled;
+
+        function disableScroll() {
+            if (window.addEventListener) // older FF
+                window.addEventListener('DOMMouseScroll', preventDefault, false);
+            oldonwheel = window.onwheel;
+            window.onwheel = preventDefault; // modern standard
+
+            oldonmousewheel1 = window.onmousewheel;
+            window.onmousewheel = preventDefault; // older browsers, IE
+            oldonmousewheel2 = document.onmousewheel;
+            document.onmousewheel = preventDefault; // older browsers, IE
+
+            oldontouchmove = window.ontouchmove;
+            window.ontouchmove = preventDefault; // mobile
+
+            oldonkeydown = document.onkeydown;
+            document.onkeydown = preventDefaultForScrollKeys;
+            isDisabled = true;
+        }
+
+        function enableScroll() {
+            if (!isDisabled) return;
+            if (window.removeEventListener)
+                window.removeEventListener('DOMMouseScroll', preventDefault, false);
+
+            window.onwheel = oldonwheel; // modern standard
+
+            window.onmousewheel = oldonmousewheel1; // older browsers, IE
+            document.onmousewheel = oldonmousewheel2; // older browsers, IE
+
+            window.ontouchmove = oldontouchmove; // mobile
+
+            document.onkeydown = oldonkeydown;
+            isDisabled = false;
+        }
+
+        window.scrollHanlder = {
+            disableScroll: disableScroll,
+            enableScroll: enableScroll
+        };
+    }();
+    /*遮罩层*/
+    function Zdivclick() {
+        setTimeout(function () {
+            $(".Zdiv>div").fadeOut("slow");
+            setTimeout(function () {
+                $(".Zdiv").fadeOut("slow");
+                scrollHanlder.enableScroll();
+                /*恢复滚动*/
+            }, 500);
+        }, 500);
+    }
+    $(".Zdiv>div").click(Zdivclick);
 
     /* jquery扩展，naturalHeight()，获取图片原始高度*/
     /*(function ($) {
@@ -225,7 +360,7 @@
             return this;
         },
         wFall: function () {/*容器内所有元素按瀑布流排列*/
-            this.arr = null;
+
             var allItem = this.getAllItem();
             var columnHeight = this.getColumnHeight();
             var self = this;
@@ -250,6 +385,7 @@
             var self = this;
             var timer = null;
             $(document).scroll(function () {
+
                 if (self.stop) {
                     return this;
                 }
@@ -271,6 +407,7 @@
                 }
                 timer = setTimeout(function () {
                     self.wFmoudle.height(0);
+                    self.arr = null;
                     self.wFall();
                 }, 100);
             });
@@ -285,11 +422,14 @@
         }
     };
 
-    setTimeout(function () {
-        waterFall.init();
-    }, 100);
-
-
+    $(document).ready(function () {
+        scrollHanlder.disableScroll();
+        /*禁用滚动*/
+        setTimeout(function () {
+            waterFall.init();
+            /*初始化页面中的图片*/
+        }, 500);
+    });
 </script>
 </body>
 </html>
