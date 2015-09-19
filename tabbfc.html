@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tab-BFC</title>
+    <!-- External CSS all-->
+    <link rel="stylesheet" href="http://libs.useso.com/js/bootstrap/3.2.0/css/bootstrap.css">
+    <!-- In-document CSS -->
+    <style>
+        .center {
+            width: 50%;
+            height: auto;
+            margin: 10em auto 0;
+            position: relative;
+        }
+
+        .center > div {
+            box-sizing:border-box;
+            width: 10%;
+            float:left;
+            /*display: inline-table;*/
+            text-align: center;
+        }
+
+        .lab {
+            position: relative;
+            margin: 0;
+            height: 2em;
+            width: 100%;
+            line-height: 2em;
+            background-color: #F0F0F0;
+        }
+
+        .lab::after,
+        .lab::before {
+            height: 0;
+            width: 0;
+            position: absolute;
+            content: "";
+        }
+
+        .lab:after {
+            right: 0;
+            border: solid;
+            border-width: 1em 0 1em 1em;
+            border-color: #fff transparent #fff #F0F0F0;
+            z-index: 3;
+        }
+
+        .lab:before {
+            left: 0;
+            border: solid;
+            border-width: 1em 0 1em 1em;
+            border-color: #F0F0F0 transparent #F0F0F0 #fff;
+            z-index: 2;
+        }
+
+        .lab:hover {
+            background: #99db76;
+        }
+
+        .lab:hover::after {
+            border-color: #fff transparent #fff #99db76;
+        }
+
+        .lab:hover::before {
+            border-color: #99db76 transparent #99db76 #fff;
+        }
+
+        .tab {
+            visibility: hidden;
+            display: none;
+        }
+
+        .tab:checked ~ .lab {
+            background: #66a843;
+        }
+
+        .tab:checked ~ .lab::after {
+            border-color: #fff transparent #fff #66a843;
+        }
+
+        .tab:checked ~ .lab::before {
+            border-color: #66a843 transparent #66a843 #fff;
+        }
+
+        .tabcontent {
+            padding: 0.5em;
+            position: absolute;
+            /*top: 0em;*/
+            background: #66a843;
+            top: 3em;
+            left: 0;
+            display: none;
+            text-align: justify;
+            box-sizing:border-box;
+        }
+
+        .tab:checked ~ .tabcontent {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<!--div.center>div*6>(label[for=tab-$]>input[id=tab-$][type=radio][name=tabname][value=]+span{tab$})+div.tabcontent{$$$}-->
+<div class="center">
+    <div>
+        <input class="tab" type="radio" id="tab-1" name="tabname" value="" checked="checked"/>
+        <label class="lab" for="tab-1">tab1</label>
+
+        <div class="tabcontent">111 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, aut
+            dolorum error exercitationem laboriosam magnam magni molestiae natus officia perferendis porro quod, quos,
+            repudiandae suscipit tempora ut velit veritatis!
+        </div>
+    </div>
+    <div>
+        <input class="tab" type="radio" id="tab-2" name="tabname" value=""/>
+        <label class="lab" for="tab-2">tab2</label>
+
+        <div class="tabcontent">222 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consequatur
+            corporis debitis dolor dolore ducimus eaque ex facere, fuga illum impedit laboriosam magni molestias
+            obcaecati quo voluptas voluptates! Error, illum.
+        </div>
+    </div>
+    <div>
+        <input class="tab" type="radio" id="tab-3" name="tabname" value=""/>
+        <label class="lab" for="tab-3">tab3</label>
+
+        <div class="tabcontent">333 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dignissimos dolores
+            ea ex fugit, placeat quos sit? Assumenda atque aut commodi dicta incidunt laborum, maxime nihil officia
+            similique, voluptates voluptatibus.
+        </div>
+    </div>
+    <div>
+        <input class="tab" type="radio" id="tab-4" name="tabname" value=""/>
+        <label class="lab" for="tab-4">tab4</label>
+
+        <div class="tabcontent">444 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolorem explicabo
+            itaque libero officiis perferendis, quod reprehenderit sequi sint veritatis. Asperiores dolor ipsum libero
+            minus mollitia qui quia tempora, voluptas!
+        </div>
+    </div>
+    <div>
+        <input class="tab" type="radio" id="tab-5" name="tabname" value=""/>
+        <label class="lab" for="tab-5">tab5</label>
+
+        <div class="tabcontent">555 Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam aspernatur
+            cupiditate eligendi et in iste laborum laudantium maiores nesciunt non omnis, optio porro quis quo quod rem
+            sint voluptatum?
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
