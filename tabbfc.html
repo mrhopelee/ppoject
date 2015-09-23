@@ -7,17 +7,24 @@
     <link rel="stylesheet" href="http://libs.useso.com/js/bootstrap/3.2.0/css/bootstrap.css">
     <!-- In-document CSS -->
     <style>
+        dfn {
+            font-style: normal;
+            font-weight: bold;
+        }
+
         .center {
             width: 50%;
+            min-width: 500px;
             height: auto;
-            margin: 10em auto 0;
+            margin: 3em auto 0;
             position: relative;
         }
 
         .center > div {
-            box-sizing:border-box;
-            width: 10%;
-            float:left;
+            box-sizing: border-box;
+            width: 15%;
+            min-width: 100px;
+            float: left;
             /*display: inline-table;*/
             text-align: center;
         }
@@ -88,16 +95,21 @@
             padding: 0.5em;
             position: absolute;
             /*top: 0em;*/
-            background: #66a843;
+            background: #fff;
+            border: 0.5em solid #66a843;
             top: 3em;
             left: 0;
-            display: none;
+            z-index: 10;
+            /*display: none;*/
             text-align: justify;
-            box-sizing:border-box;
+            box-sizing: border-box;
+            width: 100%;
+            height: 850px;
         }
 
         .tab:checked ~ .tabcontent {
-            display: block;
+            z-index: 11;
+            /*display: block;*/
         }
     </style>
 </head>
@@ -106,47 +118,109 @@
 <div class="center">
     <div>
         <input class="tab" type="radio" id="tab-1" name="tabname" value="" checked="checked"/>
-        <label class="lab" for="tab-1">tab1</label>
+        <label class="lab" for="tab-1">BFC（一）</label>
 
-        <div class="tabcontent">111 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, aut
-            dolorum error exercitationem laboriosam magnam magni molestiae natus officia perferendis porro quod, quos,
-            repudiandae suscipit tempora ut velit veritatis!
+        <div class="tabcontent">
+            <h1>BFC(block formatting context)（一）</h1>
+            <p><dfn>Box</dfn> 是 CSS 布局的对象和基本单位， 直观点来说，就是一个页面是由很多个 Box 组成的。元素的类型和 display 属性，决定了这个 Box 的类型。 不同类型的 Box，
+                会参与不同的
+                Formatting Context（一个决定如何渲染文档的容器），因此Box内的元素会以不同的方式渲染。</p>
+            <p><dfn>Formatting context</dfn> 是 W3C CSS2.1
+                规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。
+                <br/><a href="http://reference.sitepoint.com/css/formattingcontext">Formatting context </a> 以下有5种：
+            </p>
+            <ol>
+                <li><a href="http://reference.sitepoint.com/css/blockformatting">Block Fomatting Context </a></li>
+                <li><a href="http://reference.sitepoint.com/css/inlineformatting">Inline Formatting Context </a></li>
+                <li><a href="http://reference.sitepoint.com/css/listformatting">List Formatting Context </a></li>
+                <li><a href="http://www.sitepoint.com/web-foundations/table-formatting/">Table Formatting Context </a>
+                </li>
+                <li><a href="http://reference.sitepoint.com/css/replacedelements">Replaced Elements </a></li>
+            </ol>
+            <p><dfn> BFC(Block formatting context) </dfn>直译为"块级格式化上下文"。BFC是属于正常文档流的.它是指一个独立的块级渲染区域，该区域拥有一套渲染规则来约束 <dfn> Block-level
+                BOX </dfn> 的布局，且与区域外部无关。只有 <dfn> Block-level BOX </dfn>可以参与创建BFC。总之，记住这么一句话：BFC元素特性表现原则就是，内部子元素再怎么翻江倒海，翻云覆雨都不会影响外部的元素。
+            </p>
+            <h3>如何触发BFC？</h3>
+            <ol>
+                <li>根元素</li>
+                <li>fieldset元素</li>
+                <li>浮动元素（float的值不为none）</li>
+                <li>overflow的值不为visible</li>
+                <li>display的值为inline-block、table-cell、table-caption、flex、inline-flex</li>
+                <li>position的值不是static和relative（即absolute或fixed可以触发）</li>
+            </ol>
+            <h4>PS:</h4>
+            <ol>
+                <li>display:table本身并不会创建BFC，但是它会产生匿名框<dfn>( anonymous boxes )</dfn>，而匿名框中的display:table-cell可以创建新的BFC，换句话说，触发块级格式化上下文的是匿名框，而不是display:table。所以通过display:table和display:table-cell创建的BFC效果是不一样的。</li>
+                <li>fieldset 元素在www.w3.org里目前没有任何有关这个触发行为的信息，直到HTML5标准里才出现。有些浏览器bugs（Webkit，Mozilla）提到过这个触发行为，但是没有任何官方声明。实际上，即使fieldset在大多数的浏览器上都能创建新的块级格式化上下文，开发者也不应该把这当做是理所当然的。CSS2.1没有定义哪种属性适用于表单控件，也没有定义如何使用CSS来给它们添加样式。用户代理可能会给这些属性应用CSS属性，建议开发者们把这种支持当做实验性质的，更高版本的CSS可能会进一步规范这个。</li>
+            </ol>
         </div>
     </div>
     <div>
         <input class="tab" type="radio" id="tab-2" name="tabname" value=""/>
-        <label class="lab" for="tab-2">tab2</label>
+        <label class="lab" for="tab-2">BFC（二）</label>
 
-        <div class="tabcontent">222 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consequatur
-            corporis debitis dolor dolore ducimus eaque ex facere, fuga illum impedit laboriosam magni molestias
-            obcaecati quo voluptas voluptates! Error, illum.
+        <div class="tabcontent">
+            <h1>BFC(block formatting context)（二）</h1>
+            <h3>BFC的特性</h3>
+            <ol>
+                <li>生成BFC元素的子元素会一个接一个的放置。垂直方向上他们的起点是一个包含块的顶部，两个相邻子元素之间的垂直距离取决于元素的margin特性。在BFC中相邻的块级元素外边距会折叠。</li>
+                <li>生成BFC元素的子元素中，每一个子元素做外边距与包含块的左边界相接触，（对于从右到左的格式化，右外边距接触右边界），即使浮动元素也是如此（尽管子元素的内容区域会由于浮动而压缩），除非这个子元素也创建了一个新的BFC（如它自身也是一个浮动元素）。</li>
+            </ol>
+            <h4>分解如下：</h4>
+            <ol>
+                <li>内部的Box会在垂直方向，一个接一个地放置。</li>
+                <li>Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠。</li>
+                <li>每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。</li>
+                <li>BFC的区域不会与float box重叠。</li>
+                <li>计算BFC的高度时，浮动元素也参与计算。</li>
+                <li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
+            </ol>
+            <h3>BFC总结</h3>
+            <p>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。</p>
+            <p>因为BFC内部的元素和外部的元素绝对不会互相影响，因此，当BFC外部存在浮动时，它不应该影响BFC内部Box的布局，BFC会通过变窄，而不与浮动有重叠。同样的，当BFC内部有浮动时，为了不影响外部元素的布局，BFC计算高度时会包括浮动的高度。避免margin重叠也是这样的一个道理。</p>
+            <h3>参考文章</h3>
+            <ol>
+                <li><a href="http://www.cnblogs.com/lhb25/p/inside-block-formatting-ontext.html">前端精选文摘：BFC 神奇背后的原理</a></li>
+                <li><a href="http://www.zhangxinxu.com/wordpress/2015/02/css-deep-understand-flow-bfc-column-two-auto-layout/">CSS深入理解流体特性和BFC特性下多栏自适应布局</a></li>
+                <li><a href="http://www.cnblogs.com/dojo-lzz/p/3999013.html">我对BFC的理解</a></li>
+                <li><a href="http://www.html-js.com/article/1866">CSS之BFC详解</a></li>
+                <li><a href="http://melon.github.io/blog/2015/02/08/css-block-formatting-context-recap/">Block Formatting Context要点</a></li>
+                <li><a href="http://tankpt.github.io/2014/06/21/20140621_bfc/">bfc的一点理解</a></li>
+                <li><a href="http://www.w3cplus.com/css/understanding-block-formatting-contexts-in-css.html">理解CSS中BFC</a></li>
+                <li><a href="http://reference.sitepoint.com/css/formattingcontext">Formatting Concepts</a></li>
+            </ol>
         </div>
     </div>
     <div>
         <input class="tab" type="radio" id="tab-3" name="tabname" value=""/>
-        <label class="lab" for="tab-3">tab3</label>
+        <label class="lab" for="tab-3">案例一</label>
 
-        <div class="tabcontent">333 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dignissimos dolores
-            ea ex fugit, placeat quos sit? Assumenda atque aut commodi dicta incidunt laborum, maxime nihil officia
-            similique, voluptates voluptatibus.
+
+        <div class="tabcontent">
+            使用BFC来防止外边距折叠（防止垂直margin重叠）
+            <iframe width="100%" height="90%" src="//jsfiddle.net/mrhopelee/vyt5hxm5/1/embedded/result,js,html,css/"
+                    allowfullscreen="allowfullscreen" frameborder="0"></iframe>
         </div>
     </div>
     <div>
         <input class="tab" type="radio" id="tab-4" name="tabname" value=""/>
-        <label class="lab" for="tab-4">tab4</label>
+        <label class="lab" for="tab-4">案例二</label>
 
-        <div class="tabcontent">444 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolorem explicabo
-            itaque libero officiis perferendis, quod reprehenderit sequi sint veritatis. Asperiores dolor ipsum libero
-            minus mollitia qui quia tempora, voluptas!
+        <div class="tabcontent">
+            使用BFC来包含浮动(父元素包围浮动子元素);清除内部浮动(计算BFC的高度时，浮动元素也参与计算)
+            <iframe width="100%" height="90%" src="//jsfiddle.net/mrhopelee/ocwy8fzn/4/embedded/result,js,html,css/"
+                    allowfullscreen="allowfullscreen" frameborder="0"></iframe>
         </div>
     </div>
     <div>
         <input class="tab" type="radio" id="tab-5" name="tabname" value=""/>
-        <label class="lab" for="tab-5">tab5</label>
+        <label class="lab" for="tab-5">案例三</label>
 
-        <div class="tabcontent">555 Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam aspernatur
-            cupiditate eligendi et in iste laborum laudantium maiores nesciunt non omnis, optio porro quis quo quod rem
-            sint voluptatum?
+        <div class="tabcontent">
+            使用BFC来防止文字环绕;自适应两栏布局;也是多栏布局的一种方式
+            <iframe width="100%" height="90%" src="//jsfiddle.net/mrhopelee/b9urvr0o/2/embedded/result,js,html,css/"
+                    allowfullscreen="allowfullscreen" frameborder="0"></iframe>
         </div>
     </div>
 </div>
