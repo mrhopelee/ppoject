@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>用户注册</title>
+  <!-- External CSS all-->
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/background_init.css">
+  <link rel="stylesheet" type="text/css" href="css/background_welcome.css">
+  <link rel="stylesheet" type="text/css" href="css/userRegister.css">
+  <!-- External JavaScript all -->
+  <script src="http://libs.useso.com/js/jquery/2.1.1/jquery.js"></script>
+  <script src="javascript/index_photoshow.js"></script>
+</head>
+
+<body>
+
+<div class="fullbg">
+  <img draggable="false" id="bg4" src="movic_picture/background/mpbg4.jpg" style="opacity: 0;">
+  <img draggable="false" id="bg3" src="movic_picture/background/mpbg3.jpg" style="opacity: 0;">
+  <img draggable="false" id="bg2" src="movic_picture/background/mpbg2.jpg" style="opacity: 0;">
+  <img draggable="false" id="bg1" src="movic_picture/background/mpbg1.jpg" style="opacity: 0;">
+</div>
+
+
+<span class="myfilm">myfilm</span>
+
+<div class="userlogin">
+
+
+  <form action="javascript:alert('很抱歉，已暂停服务');">
+    <span>注册<span class="rf">myfilm</span>账号</span>
+    <a href="index.html">首页</a>
+
+    <p>
+      <label for="username">用户名</label>
+      <input type="text" class="form-control" id="username" placeholder="请输入用户名" required="required"
+             name="user.userName"/>
+    </p>
+
+    <p>
+      <label for="userEmail">电子邮件</label>
+      <input type="email" class="form-control" id="userEmail" placeholder="请输入电子邮件" required="required"
+             name="user.userEmail"/>
+    </p>
+
+    <p>
+      <label for="exampleInputPassword1">密码</label>
+      <input type="password" class="form-control" id="Password" placeholder="请输入密码" required="required"
+             name="user.userPassword"/>
+    </p>
+
+    <p>
+      <label for="exampleInputPassword1">重复密码</label>
+      <input type="password" class="form-control" id="rePassword" placeholder="请输入密码" required="required"
+             name="user.userPassword"/>
+    </p>
+
+    <p>
+      <input type="submit" value="注册" class="btn" id="submit">
+      <input type="reset" value="重置" class="btn">
+    </p>
+  </form>
+</div>
+</body>
+</html>

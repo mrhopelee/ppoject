@@ -1,0 +1,142 @@
+@CHARSET "UTF-8";
+
+/* 显示y滚动条 隐藏x滚动条 */
+html {
+  overflow-x: auto;
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
+  background-color: #e9e9e9;
+}
+
+/* Ruthie字体 */
+@font-face {
+  font-family: 'ruthieregular';
+  src: url("../font-ruthie/ruthie-regular-webfont.eot");
+  src: url('../font-ruthie/ruthie-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../font-ruthie/ruthie-regular-webfont.woff2') format('woff2'),
+  url('../font-ruthie/ruthie-regular-webfont.woff') format('woff'),
+  url('../font-ruthie/ruthie-regular-webfont.ttf') format('truetype'),
+  url('../font-ruthie/ruthie-regular-webfont.svg#ruthieregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+a {
+  color: #259;
+  text-decoration: none;
+}
+
+a:hover {
+}
+
+/* 除了logo其他字体设置为微软雅黑 */
+* {
+  font-family: "Microsoft YaHei";
+}
+
+/* 顶部导航开始 */
+/* 导航height为90px body设置padding避免导航遮挡body */
+body {
+
+}
+
+nav {
+  width: 100%;
+  height: 75px;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.nav {
+  width: 980px;
+  height: 100%;
+  margin: 0 auto;
+  line-height: 75px;
+}
+
+.nav a {
+  color: #333;
+}
+
+.nav a:hover {
+  color: #4078C0;
+}
+
+.nav-logo, .nav-search, .nav-link {
+  float: left;
+  line-height: 75px;
+}
+
+.nav-logo {
+  margin-right: 15px;
+  font-size: 60px;
+  font-family: "Ruthie", ruthieregular, cursive;
+  font-weight: 600;
+
+}
+
+.nav-search {
+  width: 200px;
+  margin-right: 120px;
+}
+
+.nav-search-input {
+  width: 100%;
+  height: 30px;
+  padding-right: 100px;
+  padding-left: 10px;
+  color: #a7a7a7;
+  font-weight: 800;
+  background-color: #e9e9e9;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  /*box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075) inset;*/
+}
+
+.nav-search-input:focus {
+  color: #211922;
+  /*border-color: #51A7E8;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075) inset, 0 0 5px rgba(81, 167, 232, 0.5);*/
+}
+
+.nav-link {
+}
+
+.nav-link a {
+  margin-left: 5px;
+  padding: 4px 8px;
+}
+
+.nav-ul {
+  float: right;
+  margin: 0;
+  line-height: 75px;
+  list-style-type: none;
+}
+
+.nav-ul > li {
+  float: left;
+}
+
+.nav-ul a {
+  margin-left: 20px;
+  padding: 6px 15px;
+
+  /*background-color: #fff;*/
+  background-image: linear-gradient(#fcfcfc, #eee);
+  border: 1px solid #D5D5D5;
+  border-radius: 3px;
+}
+
+.nav-ul a:hover {
+  /*background-color: #ddd;*/
+  background-image: linear-gradient(#eee, #ddd);
+  border-color: #ccc;
+  color: #333;
+}

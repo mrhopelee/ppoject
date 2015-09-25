@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>用户登录</title>
+  <!-- External CSS all-->
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/background_init.css">
+  <link rel="stylesheet" type="text/css" href="css/background_welcome.css">
+  <link rel="stylesheet" type="text/css" href="css/userLogin.css">
+  <!-- External JavaScript all -->
+  <script src="http://libs.useso.com/js/jquery/2.1.1/jquery.js"></script>
+  <script src="javascript/background.js"></script>
+</head>
+<body>
+<div class="fullbg">
+  <img draggable="false" id="bg4" src="movic_picture/background/mpbg4.jpg" style="opacity: 0;">
+  <img draggable="false" id="bg3" src="movic_picture/background/mpbg3.jpg" style="opacity: 0;">
+  <img draggable="false" id="bg2" src="movic_picture/background/mpbg2.jpg" style="opacity: 0;">
+  <img draggable="false" id="bg1" src="movic_picture/background/mpbg1.jpg" style="opacity: 0;">
+</div>
+
+
+<span class="myfilm">myfilm</span>
+<div class="userlogin">
+
+  <form action="javascript:alert('很抱歉，已暂停服务');">
+    <span>登陆<span class="rf">myfilm</span></span>
+    <a class="fr" href="index.html">首页</a>
+    <!-- <label for="exampleInputName2">用户名:</label> -->
+    <input name="user.userName" type="text" class="form-control"
+           id="exampleInputName2" placeholder="用户名/邮箱" required="required">
+    <!-- <label for="exampleInputPassword1">密码</label> -->
+    <input name="user.userPassword" type="password" class="form-control"
+           id="exampleInputPassword1" placeholder="密码" required="required">
+
+    <input type="reset" class="btn" value="重置">
+    <input type="submit" class="btn" value="登录">
+    <a class="fl" href="javascript:alert('很抱歉，已暂停服务');">找回密码</a>
+  </form>
+
+</div>
+</body>
+</html>

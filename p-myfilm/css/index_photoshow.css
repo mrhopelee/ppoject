@@ -1,0 +1,146 @@
+@CHARSET "UTF-8";
+
+.mt10 {
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+/*遮罩层*/
+.hiddenshadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 11;
+
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+#photoshow {
+  position: relative;
+  overflow: hidden;
+  width: 980px;
+  height: 500px;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+
+.photoshow_a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  display: block;
+  width: 100%;
+  height: 500px;
+  opacity: 1;
+}
+
+.photoshow_a:focus {
+  outline: none;
+}
+
+.display_none {
+  z-index: 7;
+  display: none;
+  opacity: 0;
+
+}
+
+#photoshow a img {
+  width: 100%;
+  height: 100%;
+
+}
+
+.lazy {
+  display: none;
+}
+
+.gg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 8;
+}
+
+.Absolute-Center {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9;
+  height: 50px;
+  width: 110px;
+  margin: auto;
+}
+
+/*PREV NEXT按钮div*/
+#btn_prev {
+  left: 2%;
+}
+
+#btn_next {
+  left: 98%;
+  margin-left: -50px;
+}
+
+.music-buttons {
+  position: absolute;
+  top: 225px;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, .4);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.music-buttons span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 50px;
+  color: #fff;
+  font-size: 36px;
+  font-weight: 600;
+  border-radius: 50px;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+
+}
+
+.music-buttons span:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* 5个圆形按钮 */
+.photoshowbottom {
+  width: 980px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.rdiv {
+  z-index: 10;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 5px 15px 0 15px;
+  border: 4px solid #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+
+}
