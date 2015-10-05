@@ -1,4 +1,5 @@
-$(document).ready(function () {
+/*$(document).ready*/
+window.onload=(function () {
     /* 选取元素 */
     var btn_prev = $("#btn_prev"),
         btn_next = $("#btn_next"),
